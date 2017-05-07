@@ -9,6 +9,52 @@ public class slot_machine
 	}
 }
 
+
+
+
+   public static int getBet()
+   {
+      //Scanner will allow for user input
+      Scanner enterBet = new Scanner(System.in);
+      //set input to int 
+      int bet;
+      // A while loop will keep the program running when true
+      while (true) 
+      {
+         //Output welcome message
+         System.out.print("Welcome to the Hunger Games Slot Machine!\n");
+         System.out.print("Place a bet from 1 to 100 or enter 0 to quit: ");
+    
+         //nextInt scans the next token of the input as an int. 
+         bet = enterBet.nextInt();
+         
+         //If statement returns bet range from 1 to 100
+         if (bet <= 100 && bet >= 1) 
+         {
+            return bet;
+         }
+      }
+   }
+
+   public static TripleString pull()
+   {
+      //Use reel to set TripleString default constructor to initialize string members 
+      TripleString reel = new TripleString();
+      
+      //Output result message
+      System.out.print("Thank you, and may the odds be ever in your favor!\n");
+      System.out.print("***YOUR PULL IS***\n");
+      
+      //Set mutators that intake private helper method randString()
+      reel.setFirst(randString());
+      reel.setSecond(randString());
+      reel.setThird(randString());
+
+      return reel;
+   }
+
+
+
 class TripleString
 {
 	private String string1, string2, string3;
